@@ -24,7 +24,7 @@ npm run preview   # preview the production build
 |---|---|
 | All text, contact details, services, testimonials, gallery photos, FAQs | `src/data.js` |
 | Colours, fonts, spacing (design tokens at the top) | `src/styles.css` |
-| Header (live Lagos clock, nav, WhatsApp button) | `src/components/Header.jsx` |
+| Header (nav, WhatsApp button) | `src/components/Header.jsx` |
 | Footer ("ask an expert" box opens WhatsApp) | `src/components/Footer.jsx` |
 | Pages | `src/pages/Home.jsx`, `About.jsx`, `Services.jsx`, `Gallery.jsx`, `Contact.jsx` |
 

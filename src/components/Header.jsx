@@ -3,15 +3,6 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { nav, contact, waLink } from '../data'
 import { Icon } from './ui'
 
-function LagosClock() {
-  const fmt = () => new Intl.DateTimeFormat('en-GB', {
-    hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZone: 'Africa/Lagos',
-  }).format(new Date())
-  const [time, setTime] = useState(fmt)
-  useEffect(() => { const t = setInterval(() => setTime(fmt()), 1000); return () => clearInterval(t) }, [])
-  return <div className="clock" aria-label="Local time in Lagos"><span>{time}</span><b>Lagos</b></div>
-}
-
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -32,7 +23,6 @@ export default function Header() {
             <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="" width="24" height="38" />
             <span className="brand-name">MADEY<small>GLOBAL TRAVEL SOLUTIONS LTD</small></span>
           </Link>
-          <LagosClock />
           <nav className="nav" aria-label="Main">
             {nav.map((n) => <NavLink key={n.to} to={n.to} end={n.to === '/'}>{n.label}</NavLink>)}
           </nav>
