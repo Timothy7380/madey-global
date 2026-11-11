@@ -59,7 +59,6 @@ function Value() {
             <div className="ph"><img className="img-cover" src={img('1580502304784-8985b7eb7260', 600)} alt="Santorini at dusk" loading="lazy" /></div>
             <h4>Bespoke Itineraries</h4>
             <p>Crafted to your preferences</p>
-            <span className="i">i</span>
           </div>
         </Reveal>
         <Reveal className="value-right" delay={200}>
@@ -103,7 +102,7 @@ function HassleFree() {
             <CircleBtn to="/services" label="See all services" />
           </div>
           <div className="stadium"><img className="img-cover" src={img('1546569397-ab326af881f5', 900)} alt="Glacier lake in Patagonia" loading="lazy" /></div>
-          <Meta a="Explore" b="Destinations" n="01" />
+          <Meta a="Explore" b="Destinations" />
         </Reveal>
         <div className="hassle-right">
           <Reveal className="hassle-title">
@@ -116,11 +115,11 @@ function HassleFree() {
               <CircleBtn className="sm static" label="Next destinations" onClick={() => scroll(1)} />
             </div>
             <div className="dest-track" ref={track}>
-              {destinations.map((d, i) => (
+              {destinations.map((d) => (
                 <Link to="/gallery" className="dest-card" key={d.name}>
                   <div className="ph"><img className="img-cover" src={img(d.image, 600)} alt={d.name} loading="lazy" /></div>
-                  <div className="cap"><small>{String(i + 1).padStart(2, '0')}</small><b>{d.name}</b></div>
-                  <div className="tags">{d.tags.join(' · ')}</div>
+                  <div className="cap"><b>{d.name}</b></div>
+                  <div className="tags" style={{ textAlign: 'left' }}>{d.tags.join(' · ')}</div>
                 </Link>
               ))}
             </div>
@@ -164,7 +163,7 @@ function Testimonials() {
           <div className="body">
             <div className="t-quote-mark" aria-hidden="true">“</div>
             <blockquote>“{cur.quote}”</blockquote>
-            <Meta a={cur.badge} b="Verified" n={`${String(i + 1).padStart(2, '0')} / ${String(n).padStart(2, '0')}`} />
+            <Meta a={cur.badge} b="Verified" />
           </div>
         </div>
         <div className="t-next">
@@ -177,7 +176,6 @@ function Testimonials() {
       </Reveal>
       <div className="t-controls">
         <CircleBtn className="static" icon="ArrowLeft" label="Previous testimonial" onClick={() => go(-1)} />
-        <span className="muted" style={{ fontSize: 14 }}>{String(i + 1).padStart(2, '0')} / {String(n).padStart(2, '0')}</span>
         <CircleBtn className="static" label="Next testimonial" onClick={() => go(1)} />
       </div>
     </section>
@@ -213,7 +211,7 @@ function Benefits() {
               <Link to="/services" className="btn outline">All services <Icon.Arrow width={16} /></Link>
             </div>
             <ul className="svc-list">
-              {coreServices.map((s, k) => <li key={s}><span>{String(k + 1).padStart(2, '0')}</span>{s}</li>)}
+              {coreServices.map((s) => <li key={s}>{s}</li>)}
             </ul>
           </div>
           <div className="card b-b">

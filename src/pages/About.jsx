@@ -56,7 +56,7 @@ export default function About() {
               <h3 className="h3">Simplify global travel through smart planning.</h3>
               <p className="muted">To simplify global travel through smart planning, expert support, and dependable service.</p>
             </div>
-            <Meta a="Mission" b="Madey Global" n="01" />
+            <Meta a="Mission" b="Madey Global" />
           </Reveal>
           <Reveal className="card dark" delay={100}>
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}><span className="eyebrow" style={{ color: 'var(--sky)' }}>Our vision</span></div>
@@ -64,7 +64,7 @@ export default function About() {
               <h3 className="h3">Become a trusted Madey Global partner.</h3>
               <p className="muted">To become a trusted Madey Global partner for individuals and businesses across borders.</p>
             </div>
-            <Meta a="Vision" b="Worldwide" n="02" />
+            <Meta a="Vision" b="Worldwide" />
           </Reveal>
         </div>
       </section>
@@ -83,7 +83,7 @@ export default function About() {
               <CircleBtn to="/services" label="View services" />
             </div>
             <ul className="why-list">
-              {whyChoose.map((w, i) => <li key={w}><span>{String(i + 1).padStart(2, '0')}</span>{w}</li>)}
+              {whyChoose.map((w) => <li key={w}>{w}</li>)}
             </ul>
             <div><PillCta to="/contact" dark>Talk to our team</PillCta></div>
           </Reveal>

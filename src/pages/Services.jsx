@@ -97,7 +97,7 @@ export default function Services() {
         <div className="steps">
           {process.map((p, i) => (
             <Reveal className="step" key={p.title} delay={i * 70}>
-              <div className="n"><span>{String(i + 1).padStart(2, '0')}</span><Icon.ArrowUpRight width={18} /></div>
+              <div className="n" style={{ justifyContent: 'flex-end' }}><Icon.ArrowUpRight width={18} /></div>
               <div style={{ display: 'grid', gap: 10 }}>
                 <h3 className="h3" style={{ fontSize: 22 }}>{p.title}</h3>
                 <p className="muted" style={{ fontSize: 15 }}>{p.text}</p>
@@ -119,7 +119,7 @@ export default function Services() {
           {serviceDestinations.map((d, i) => (
             <Reveal className="dest-tile" key={d.name} delay={(i % 3) * 80}>
               <img className="img-cover" src={img(d.image, 900)} alt={d.name} loading="lazy" />
-              <div className="cap"><span>{d.name}</span><span style={{ fontSize: 13, opacity: .8 }}>{String(i + 1).padStart(2, '0')}</span></div>
+              <div className="cap"><span>{d.name}</span></div>
             </Reveal>
           ))}
         </div>

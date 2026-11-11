@@ -110,11 +110,10 @@ export default function Contact() {
             {faqs.map((f, i) => (
               <div className={`faq-item${openFaq === i ? ' open' : ''}`} key={f.q}>
                 <button onClick={() => setOpenFaq(openFaq === i ? -1 : i)} aria-expanded={openFaq === i}>
-                  <span className="n">{String(i + 1).padStart(2, '0')}</span>
                   {f.q}
                   <span className="pm"><Icon.Plus width={16} /></span>
                 </button>
-                <div className="a"><div><p>{f.a}</p></div></div>
+                <div className="a"><div><p style={{ paddingLeft: 0 }}>{f.a}</p></div></div>
               </div>
             ))}
           </Reveal>
